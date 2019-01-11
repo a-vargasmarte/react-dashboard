@@ -1,0 +1,33 @@
+{
+  "name": "react-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
+    "seed": "node scripts/seedBeer.js",
+    "install": "cd client && yarn install",
+    "server": "node server.js",
+    "client": "cd client && npm run start",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-vargasmarte/react-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-vargasmarte/react-dashboard/issues"
+  },
+  "homepage": "https://github.com/a-vargasmarte/react-dashboard#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9"
+  }
+}
